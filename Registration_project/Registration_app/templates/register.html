@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+        .form-box {
+            background: white;
+            width: 450px;
+            margin: 50px auto;
+            padding: 25px;
+            border-radius: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        .inline {
+            width: auto;
+        }
+        button {
+            background: #8360c3;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Registration Form 📝</h2>
+
+    <form method="POST" action="{% url 'register_result' %}">
+        {% csrf_token %}
+
+        Username:
+        <input type="text" name="username" required>
+
+        Country:
+        <select name="country">
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+        </select>
+
+        Email:
+        <input type="email" name="email" required>
+
+        Password:
+        <input type="password" name="password" required>
+
+        Gender:
+        <br>
+        <input type="radio" name="gender" value="Male" class="inline"> Male
+        <input type="radio" name="gender" value="Female" class="inline"> Female
+        <input type="radio" name="gender" value="Other" class="inline"> Other
+        <br><br>
+
+        Hobbies:
+        <br>
+        <input type="checkbox" name="hobbies" value="Reading" class="inline"> Reading
+        <input type="checkbox" name="hobbies" value="Music" class="inline"> Music
+        <input type="checkbox" name="hobbies" value="Sports" class="inline"> Sports
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>

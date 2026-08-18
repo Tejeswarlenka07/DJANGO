@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest</title>
+</head>
+<body>
+
+<h2>Simple Interest Calculator</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    
+    Principal: <input type="number" name="principal"><br><br>
+    Rate: <input type="number" name="rate"><br><br>
+    Time: <input type="number" name="time"><br><br>
+    
+    <button type="submit">Calculate</button>
+</form>
+
+{% if si %}
+    <h3>Simple Interest = {{ si }}</h3>
+{% endif %}
+
+</body>
+</html>
+
+
+
+

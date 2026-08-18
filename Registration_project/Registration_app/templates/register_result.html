@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Result</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #e0eafc;
+        }
+        .result-box {
+            background: white;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            background: #8360c3;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: #6845b5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-box">
+    <h2>Registration Details ✅</h2>
+
+    <p><b>Username:</b> {{ username }}</p>
+    <p><b>Country:</b> {{ country }}</p>
+    <p><b>Email:</b> {{ email }}</p>
+    <p><b>Password:</b> {{ password }}</p>
+    <p><b>Gender:</b> {{ gender }}</p>
+
+    <p><b>Hobbies:</b>
+        {% for h in hobbies %}
+            {{ h }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+
+    
+    <a href="{% url 'register' %}">⬅ Back to Registration</a>
+    <br><br>
+    <a href="{% url 'home' %}">🏠 Go to Home</a>
+</div>
+
+</body>
+</html>

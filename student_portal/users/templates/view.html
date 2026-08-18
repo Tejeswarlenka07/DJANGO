@@ -1,0 +1,25 @@
+<h2>User List</h2>
+
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Country</th>
+    <th>Action</th>
+</tr>
+
+{% for u in data %}
+<tr>
+    <td>{{ u.username }}</td>
+    <td>{{ u.email }}</td>
+    <td>{{ u.country }}</td>
+    <td>
+        <a href="{% url 'edit' u.id %}">Edit</a> |
+        <a href="{% url 'delete' u.id %}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+<a href="{% url 'add' %}">Add New User</a>

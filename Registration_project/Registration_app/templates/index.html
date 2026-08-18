@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            text-align: center;
+            padding-top: 100px;
+        }
+        .box {
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        a {
+            text-decoration: none;
+            background: #2ebf91;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Welcome to My Website </h2>
+        <p>Click below to register</p>
+        <a href="{% url 'register' %}">Go to Registration</a>
+    </div>
+</body>
+</html>
